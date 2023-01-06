@@ -16,6 +16,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
 } from 'react-native';
 
 import {
@@ -25,13 +26,15 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Tts from 'react-native-tts';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
+
   return (
-    <View style={styles.sectionContainer}>
+    <View style={styles.sectionContainer} onPress={speak}>
       <Text
         style={[
           styles.sectionTitle,
@@ -60,7 +63,9 @@ const App: () => Node = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
+  const speak = () => {
+    Tts.speak('Hello, world!');
+  };
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -77,6 +82,7 @@ const App: () => Node = () => {
           }}>
 
         </View>
+        <Button title="Haha" onPress={speak} />
       </ScrollView>
     </SafeAreaView>
   );

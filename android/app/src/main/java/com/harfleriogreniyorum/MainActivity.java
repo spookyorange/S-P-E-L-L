@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "HarfleriOgreniyorum";
+    return "S-P-E-L-L";
   }
 
   /**

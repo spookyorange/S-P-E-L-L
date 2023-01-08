@@ -15,7 +15,11 @@ const HomeScreen = () => {
         <Button title={'Two letter'} color="#7c3aed" onPress={() => {}} />
       </View>
       <View style={styles.buttonContainer}>
-        <Button title={'Random letter'} color="#6d28d9" onPress={() => {}} />
+        <Button
+          title={'Random Length word'}
+          color="#6d28d9"
+          onPress={() => {}}
+        />
       </View>
       <View style={styles.buttonContainer}>
         <Button title={'Source Code'} color="#ea580c" onPress={() => {}} />

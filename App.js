@@ -8,21 +8,15 @@
 
 import type {Node} from 'react';
 import React from 'react';
-import {StyleSheet, useColorScheme} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import Tts from 'react-native-tts';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/components/HomeScreen';
-import Footer from './src/components/Footer';
+import OneLetterGame from './src/components/OneLetterGame';
 
 const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
   const Stack = createNativeStackNavigator();
 
-  const speak = () => {
-    Tts.speak('Hello, world!');
-  };
   return (
     <NavigationContainer theme={MyTheme}>
       <Stack.Navigator>
@@ -32,8 +26,13 @@ const App: () => Node = () => {
           style={styles.sectionContainer}
           options={{title: 'Welcome to S-P-E-L-L'}}
         />
+        <Stack.Screen
+          name="OneLetterGame"
+          component={OneLetterGame}
+          style={styles.sectionContainer}
+          options={{title: 'One Letter Game'}}
+        />
       </Stack.Navigator>
-      <Footer />
     </NavigationContainer>
   );
 };

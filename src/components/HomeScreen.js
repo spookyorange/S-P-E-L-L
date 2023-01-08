@@ -1,30 +1,41 @@
 import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
+import Footer from './Footer';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
-    <View style={styles.home}>
-      <Text style={styles.introText}>
-        This is S-P-E-L-L, a place for you to learn(or get better at) how to
-        spell
-      </Text>
-      <View style={styles.buttonContainer}>
-        <Button title={'One letter'} color="#8b5cf6" onPress={() => {}} />
+    <>
+      <View style={styles.home}>
+        <Text style={styles.introText}>
+          This is S-P-E-L-L, a place for you to learn(or get better at) how to
+          spell
+        </Text>
+        <View style={styles.buttonContainer}>
+          <Button
+            title={'One letter'}
+            color="#8b5cf6"
+            onPress={() => {
+              navigation.navigate('OneLetterGame');
+            }}
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button title={'Two letter'} color="#7c3aed" onPress={() => {}} />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button
+            title={'Random Length word'}
+            color="#6d28d9"
+            onPress={() => {}}
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button title={'Source Code'} color="#ea580c" onPress={() => {}} />
+        </View>
+        <View />
       </View>
-      <View style={styles.buttonContainer}>
-        <Button title={'Two letter'} color="#7c3aed" onPress={() => {}} />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          title={'Random Length word'}
-          color="#6d28d9"
-          onPress={() => {}}
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button title={'Source Code'} color="#ea580c" onPress={() => {}} />
-      </View>
-    </View>
+      <Footer />
+    </>
   );
 };
 

@@ -13,6 +13,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/components/HomeScreen';
 import OneLetterGame from './src/components/OneLetterGame';
+import TwoLetterGame from './src/components/TwoLetterGame';
 
 const App: () => Node = () => {
   const Stack = createNativeStackNavigator();
@@ -31,6 +32,12 @@ const App: () => Node = () => {
           component={OneLetterGame}
           style={styles.sectionContainer}
           options={{title: 'One Letter Game'}}
+        />
+        <Stack.Screen
+          name="TwoLetterGame"
+          component={TwoLetterGame}
+          style={styles.sectionContainer}
+          options={{title: 'Two Letter Game'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

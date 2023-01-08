@@ -20,11 +20,17 @@ const HomeScreen = ({navigation}) => {
           />
         </View>
         <View style={styles.buttonContainer}>
-          <Button title={'Two letter'} color="#7c3aed" onPress={() => {}} />
+          <Button
+            title={'Two letter'}
+            color="#7c3aed"
+            onPress={() => {
+              navigation.navigate('TwoLetterGame');
+            }}
+          />
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            title={'Random Length word'}
+            title={'6-8 Length word(hard)'}
             color="#6d28d9"
             onPress={() => {}}
           />

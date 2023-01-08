@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, Linking, StyleSheet, Text, View} from 'react-native';
 import Footer from './Footer';
 
 const HomeScreen = ({navigation}) => {
@@ -32,11 +32,19 @@ const HomeScreen = ({navigation}) => {
           <Button
             title={'6-8 Length word(hard)'}
             color="#6d28d9"
-            onPress={() => {}}
+            onPress={() => {
+              navigation.navigate('WordGame');
+            }}
           />
         </View>
         <View style={styles.buttonContainer}>
-          <Button title={'Source Code'} color="#ea580c" onPress={() => {}} />
+          <Button
+            title={'Source Code'}
+            color="#ea580c"
+            onPress={() => {
+              Linking.openURL('https://github.com/spookyorange/S-P-E-L-L');
+            }}
+          />
         </View>
         <View />
       </View>

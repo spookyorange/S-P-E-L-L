@@ -1,10 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Linking, StyleSheet, Text, View} from 'react-native';
 
 const Footer = () => {
   return (
     <View style={styles.footer}>
-      <Text style={styles.text}>
+      <Text
+        onPress={() => {
+          Linking.openURL('https://grapes.spookyorange.com/g/spookyorange');
+        }}
+        style={styles.text}>
         by <Text style={{color: '#f97316'}}>Spookyorange</Text>
       </Text>
     </View>

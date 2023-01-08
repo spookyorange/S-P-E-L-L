@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import Tts from 'react-native-tts';
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
-import letters2 from '../2letters.json';
+import words from '../6_8letters.json';
 import colors from '../colors.json';
 
-const allLetters = letters2;
+const allLetters = words;
 const allColors = colors;
 
-const TwoLetterGame = () => {
+const WordGame = () => {
   const [letter, setLetter] = useState('');
   const [userInput, setUserInput] = useState('');
   const [color, setColor] = useState(
@@ -25,7 +25,7 @@ const TwoLetterGame = () => {
   }, []);
 
   useEffect(() => {
-    speak();
+    sayWord();
   }, [playCount]);
 
   const setGame = () => {
@@ -42,6 +42,10 @@ const TwoLetterGame = () => {
     for (let i in letter) {
       Tts.speak(letter[i]);
     }
+  };
+
+  const sayWord = () => {
+    Tts.speak(letter);
   };
 
   const checkAnswer = () => {
@@ -63,6 +67,9 @@ const TwoLetterGame = () => {
         <Text style={styles.scoreText}>Count: {playCount}</Text>
         <Text style={styles.scoreText}>Score: {score}</Text>
         <Text style={styles.scoreText}>Combo: {combo}</Text>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button title="Say the Word!" color={color} onPress={sayWord} />
       </View>
       <View style={styles.buttonContainer}>
         <Button title="Hear The Letters!" color={color} onPress={speak} />
@@ -133,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TwoLetterGame;
+export default WordGame;
